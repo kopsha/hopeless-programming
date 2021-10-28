@@ -95,4 +95,4 @@ while (i < nColumns && j < nRanges && i >= 0 && j >= 0) {
 
 ### Support or Contact
 
-If you reconize your little stinkers, please write send me a short message [here](file://dev/null) and you might restore my respect to you.
+If you reconize your little stinkers, please write send me a short message [here](http://dev/null) and you might restore my respect to you.

@@ -1,37 +1,98 @@
-## Welcome to GitHub Pages
+## Welcome to hopeless programming
 
-You can use the [editor on GitHub](https://github.com/kopsha/hopeless-programming/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Bits and bytes of code from all hopeless programmers I've met.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Nobody cares for actual good (or even best) practices, so here you can enjoy the stinkers I had work on.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Terrible idea one
 
-```markdown
-Syntax highlighted code block
+Hopefully this will go well here
 
-# Header 1
-## Header 2
-### Header 3
+```typescript
+let i = iStart;
+let j = jStart;
+while (i < nColumns && j < nRanges && i >= 0 && j >= 0) {
+	let plot = this.plot(i, j);
+	if (plot) {
+		this.sorted.push(plot);
+	}
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+	if (walkOrder === 'left_right') {
+		i += iDir;
+		if (i >= nColumns || i < 0) {
+			i = iStart;
+			j += jDir;
+		}
+	} else if (walkOrder === 'top_down') {
+		j += jDir;
+		if (j >= nRanges || j < 0) {
+			j = jStart;
+			i += iDir;
+		}
+	} else if (walkOrder === 'zig_zag_horizontal') {
+		if (j % 2 === jStart % 2) {
+			i += iDir;
+			if (i >= nColumns || i < 0) {
+				i = iEnd;
+				j += jDir;
+			}
+		} else {
+			i -= iDir;
+			if (i < 0 || i >= nColumns) {
+				i = iStart;
+				j += jDir;
+			}
+		}
+	} else if (walkOrder === 'zig_zag_vertical') {
+		if (i % 2 === iStart % 2) {
+			j += jDir;
+			if (j >= nRanges || j < 0) {
+				j = jEnd;
+				i += iDir;
+			}
+		} else {
+			j -= jDir;
+			if (j < 0 || j >= nRanges) {
+				j = jStart;
+				i += iDir;
+			}
+		}
+	} else if (walkOrder === '2rows_horizontal') {
+		if (j % 4 === jStart % 4) {
+			j += jDir;
+			if (j >= nRanges || j < 0) {
+				j = jEnd;
+				i += iDir;
+			}
+		} else if (j % 4 === (jStart + jDir) % 4) {
+			i += iDir;
+			if (i >= nColumns || i < 0) {
+				i = iEnd;
+				j += jDir;
+			} else {
+				j -= jDir;
+			}
+		} else if (j % 4 === (jStart + 2 * jDir) % 4) {
+			j += jDir;
+			if (j >= nRanges || j < 0) {
+				j = jEnd;
+				i -= iDir;
+			}
+		} else {
+			i -= iDir;
+			if (i >= nColumns || i < 0) {
+				i = iStart;
+				j += jDir;
+			} else {
+				j -= jDir;
+			}
+		}
+	}
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kopsha/hopeless-programming/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+If you reconize your little stinkers, please write send me a short message [here](file://dev/null) and you might restore my respect to you.

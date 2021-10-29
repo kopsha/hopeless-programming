@@ -91,6 +91,27 @@ while (i < nColumns && j < nRanges && i >= 0 && j >= 0) {
 }
 ```
 
+### Terrible idea two
+
+This little stinker I found in a django project, with rest framework and all that jazz.
+
+```python
+def serialize_datetime(value, bigquery_compatibility=False):
+    if value is None:
+        return value
+
+    assert value.tzinfo is None
+
+    if bigquery_compatibility:
+        return value.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+    else:
+        return "{}Z".format(value.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
+
+```
+
+Let's just write our own date-time serialization, because DRF DatetimeField is too mainstream.
+
+
 
 ### Support or Contact
 

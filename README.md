@@ -146,9 +146,9 @@ At this point i believe he's just trolling us, the for iterations are killing me
 * then `for attr, (name, _) in zip(saved_attributes, attributes):`
 
 If you notice in one iteration is picking up the `value_type` and in the next one
-the `name`. In the end he is *zipping attributes with attributes*!
+the `name`. In the end he is zipping *attributes* with *attributes*!
 
-This guy must be *"certifiable crazy"*, his code is shortening my life more than my cigarettes.
+This guy must be _certifiable_, his code is shortening my life more than my cigarettes.
 
 
 ### Support or Contact

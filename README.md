@@ -1,8 +1,9 @@
 ## Welcome to hopeless programming
 
-Bits and bytes of code from all hopeless programmers I've met.
 
-Nobody cares for actual good (or even best) practices, so here you can enjoy the stinkers I had work on.
+Bits and bytes of code from all hopeless programmers I have ever met.
+
+Nobody cares for actual good (or even best) practices, so here you can enjoy the stinkers I had to work with.
 
 
 ### Terrible idea one

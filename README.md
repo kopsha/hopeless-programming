@@ -106,11 +106,47 @@ def serialize_datetime(value, bigquery_compatibility=False):
         return value.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
     else:
         return "{}Z".format(value.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
-
 ```
 
-Let's just write our own date-time serialization, because DRF DatetimeField is too mainstream.
+Why not write your own date-time serialization...? Because DRF's DatetimeField is too mainstream.
 
+
+
+### zipping things just to ignore them
+
+Have a look at this idiocy:
+
+```python
+def create_attributes(self, dim_meta, attributes):
+    saved_attributes = [
+        AttributeMeta(
+            tenant=self.tenant,
+            dimension_meta=dim_meta,
+            order=order,
+            type=value_type,
+            required=False,
+        )
+        for order, (_, value_type) in enumerate(attributes)
+    ]
+    for attr, (name, _) in zip(saved_attributes, attributes):
+        attr.name_json = I18nText(name)
+        attr.name = name
+        attr.name_slug = attr.get_unique_for_name()
+    value_meta.set_internal_order(saved_attributes)
+
+    AttributeMeta.upsert(saved_attributes)
+
+    return saved_attributes
+```
+
+At this point i believe he's just trolling us, the for iterations are killing me:
+* first `for order, (_, value_type) in enumerate(attributes)`
+* then `for attr, (name, _) in zip(saved_attributes, attributes):`
+
+If you notice in one iteration is picking up the `value_type` and in the next one
+the `name`. In the end he is *zipping attributes with attributes*!
+
+This guy must be *"certifiable crazy"*, his code is shortening my life more than my cigarettes.
 
 
 ### Support or Contact

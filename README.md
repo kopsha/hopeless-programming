@@ -153,4 +153,4 @@ This guy must be _certifiable_, his code is shortening my life more than my ciga
 
 ### Support or Contact
 
-If you reconize your little stinkers, please write send me a short message [here](http://dev/null) and you might restore my respect to you.
+If you reconize your little stinkers, please write me a short message [here](http://dev/null) and I might restore my respect for you.

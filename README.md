@@ -94,6 +94,7 @@ while (i < nColumns && j < nRanges && i >= 0 && j >= 0) {
 ### Terrible idea two
 
 This little stinker I found in a django project, with rest framework and all that jazz.
+But that's too mainstream for my dude, he prefers to serialize the values on his own terms.
 
 ```python
 def serialize_datetime(value, bigquery_compatibility=False):
@@ -108,7 +109,8 @@ def serialize_datetime(value, bigquery_compatibility=False):
         return "{}Z".format(value.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
 ```
 
-Why not write your own date-time serialization...? Because DRF's DatetimeField is too mainstream.
+_Rule of thumb_: Never trust an `if`, I hear they are highly criticized lately. Use `assert` instead.
+
 
 
 

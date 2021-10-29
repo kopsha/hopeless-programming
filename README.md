@@ -1,14 +1,11 @@
 ## Welcome to hopeless programming
 
 
-Bits and bytes of code from all hopeless programmers I have ever met.
+Nobody cares for good (or even best) practices, so it is time to expose them jewels here.
+Enjoy these little stinkers I had to work with.
 
-Nobody cares for actual good (or even best) practices, so here you can enjoy the stinkers I had to work with.
 
-
-### Terrible idea one
-
-Hopefully this will go well here
+### I can do anything syndrome
 
 ```typescript
 let i = iStart;
@@ -91,6 +88,12 @@ while (i < nColumns && j < nRanges && i >= 0 && j >= 0) {
     }
 }
 ```
+Can you feel the _brain fart_ of this poor little fucker? He clearly has some discipline,
+trying to keep the things readable, but obviously he has no clue how to do it. But that
+does not stop him, he can overpower anything with his brain... is it?
+
+He has not heard of higher level concepts. This guy codes like he's working out.
+
 
 ### Terrible idea two
 

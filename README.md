@@ -116,11 +116,12 @@ def serialize_datetime(value, bigquery_compatibility=False):
         return "{}Z".format(value.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
 ```
 
-_Rule of thumb_: Never trust an `if`, I hear they are highly criticized lately.
-Use `assert` instead.
+_Rule of thumb_: Never trust an **if**, I hear they are highly criticized lately.
+Use **assert** instead.
 
-If read that assert carefully, you will see that he is aware of his doings, but
-simply did not land on the right [stackoverflow](https://stackoverflow.com/) post.
+If you read that assert carefully, you will see that he is aware of his doings,
+but simply did not land on the right [stackoverflow](https://stackoverflow.com/)
+post.
 
 
 

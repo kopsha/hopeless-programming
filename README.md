@@ -168,7 +168,7 @@ reached his limits in this domain...
 
 I have just one meme for you mate:
 
-![booleans](./res/booleans.jpeg){:height="300px" width="214px"}.
+![booleans](./res/booleans.jpeg){:width="300px" height="214px"}.
 
 
 

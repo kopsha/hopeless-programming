@@ -1,11 +1,11 @@
-## Welcome to hopeless programming
+# Welcome to hopeless programming
 
 
 Nobody cares for good (or even best) practices, so it is time to expose them
 jewels here. Enjoy these little stinkers I had to work with.
 
 
-### I can do anything syndrome
+## I can do anything syndrome
 
 ```typescript
 let i = iStart;
@@ -97,7 +97,7 @@ out, just to burn calories._
 
 
 
-### Terrible idea two
+## Terrible idea two
 
 The next gem was found in a django project, with rest framework and all that jazz.
 But that's too mainstream for my dude, he prefers to serialize the values on his
@@ -125,7 +125,7 @@ post.
 
 
 
-### Tell me you're an amateur, without ...
+## Tell me you're an amateur, without ...
 
 This guy had no friends in the coding business. I say "no friends", but *no
 acqauintances* would be more precise; no one in his circle to talk about his
@@ -173,7 +173,7 @@ I have just one meme for you mate:
 
 
 
-### zipping things just to ignore them
+## zipping things just to ignore them
 
 Have a look at this idiocy:
 
@@ -212,6 +212,6 @@ cigarettes.
 
 
 
-## Support or Contact
+# Support or Contact
 
 If you reconize your little stinkers, please write me a short message [here](http://dev/null) and I might restore my respect for you.

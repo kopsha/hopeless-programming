@@ -1,11 +1,27 @@
-# Welcome to hopeless programming
+# hopeless programming
 
 
-Nobody cares for good (or even best) practices, so it is time to expose them
-jewels here. Enjoy these little stinkers I had to work with.
+If you want to learn how to be a Rick Sanchez of software development, buoy
+you're in the right place. It is not really hard, you just need to write your
+code in a bit more complicated way than it needs to be.
+
+Maybe you can find some generalisation that will allow you to reuse three lines
+of code in two places by creating a method that accepts five parameters?!
+
+Maybe you can reduce three lines of code into one by using a clever triple nested
+ternary operator?!
+
+Maybe you can use chained functions, nested conditional statements, over-bloated
+design patterns and clever one-liners that use niche hipster features of the
+language you write in.
+
+The sky is the limit! Of course, it will make the application harder to read and
+maintain but that will probably be your coworkers’ problem, right? Excellent!
+
+So give it a go and write a code that proves you’re a real hacker...
 
 
-# I can do anything syndrome
+## I can do anything syndrome
 
 ```typescript
 let i = iStart;
@@ -97,7 +113,7 @@ out, just to burn calories._
 
 
 
-# Terrible idea two
+## Terrible idea two
 
 The next gem was found in a django project, with rest framework and all that jazz.
 But that's too mainstream for my dude, he prefers to serialize the values on his
@@ -125,7 +141,7 @@ post.
 
 
 
-# Tell me you're an amateur, without ...
+## Tell me you're an amateur, without ...
 
 This guy had no friends in the coding business. I say "no friends", but *no
 acqauintances* would be more precise; no one in his circle to talk about his
@@ -173,7 +189,7 @@ I have just one meme for you mate:
 
 
 
-# zipping things just to ignore them
+## zipping things just to ignore them
 
 Have a look at this idiocy:
 
@@ -212,7 +228,7 @@ cigarettes.
 
 
 
-# Support or Contact
+## Support or Contact
 
 If you reconize your little stinkers, please write me a short message
 [here](http://dev/null) and you might restore my respect for you.

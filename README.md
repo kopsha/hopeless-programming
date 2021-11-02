@@ -136,16 +136,20 @@ is for real and I am afraid his madness is contagious. So *Ctrl-C + Ctrl-V*:
 ```python
 class DimensionCreatedOnDevice(BaseModel):
     """
-    Marks dimensions that were added to a DDM of a given trial because they were either:
+    Marks dimensions that were added to a DDM of a given trial because they were
+    either:
     - created on the mobile app
-    - linked to a new plot on the mobile app, and the dimension wasn't present in a server DDM at the time of sync
-      (e.g. the user selected the dimension from the trial's customer_dimensions list)
+    - linked to a new plot on the mobile app, and the dimension wasn't present
+    in a server DDM at the time of sync
+      (e.g. the user selected the dimension from the trial's customer_dimensions
+      list)
 
     Note that there is no data migration:
     only records created after this model will be marked.
 
     Currently this is used only by trials with a manual layout,
-    and it was introduced together with that layout (hence why the data migration is missing).
+    and it was introduced together with that layout (hence why the data migration
+    is missing).
     """
 
     trial = models.ForeignKey("Trial", on_delete=models.CASCADE)

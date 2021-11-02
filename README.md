@@ -21,6 +21,10 @@ maintain but that will probably be your coworkers’ problem, right? Excellent!
 So give it a go and write a code that proves you’re a real hacker...
 
 
+
+---
+
+
 ## I can do anything syndrome
 
 ```typescript
@@ -113,6 +117,9 @@ out, just to burn calories._
 
 
 
+---
+
+
 ## Terrible idea two
 
 The next gem was found in a django project, with rest framework and all that jazz.
@@ -139,6 +146,9 @@ If you read that assert carefully, you will see that he is aware of his doings,
 but simply did not land on the right [stackoverflow](https://stackoverflow.com/)
 post.
 
+
+
+---
 
 
 ## Tell me you're an amateur, without ...
@@ -189,6 +199,9 @@ I have just one meme for you mate:
 
 
 
+---
+
+
 ## zipping things just to ignore them
 
 Have a look at this idiocy:
@@ -226,6 +239,9 @@ the `name`. In the end he is zipping *attributes* with *attributes*!
 This guy must be _certifiable_, his code is shortening my life more than my
 cigarettes.
 
+
+
+---
 
 
 ## Support or Contact

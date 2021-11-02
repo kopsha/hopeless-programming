@@ -132,7 +132,7 @@ acqauintances* would be more precise; no one in his circle to talk about his
 misery...
 
 I share this sh\*tty piece with you untouched, because I want you to know this
-is for real and I am afraid his madness is contagious. So *Ctrl-C + Ctrl-V*:
+is for real, also I am afraid his madness is contagious... So *Ctrl-C + Ctrl-V*:
 
 ```python
 class DimensionCreatedOnDevice(BaseModel):

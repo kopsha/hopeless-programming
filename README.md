@@ -116,6 +116,46 @@ def serialize_datetime(value, bigquery_compatibility=False):
 _Rule of thumb_: Never trust an `if`, I hear they are highly criticized lately. Use `assert` instead.
 
 
+### Tell me you're an amateur, without ...
+
+This guy had no friends in the coding business. I say "no friends", but *no acqauintances*
+would be more precise; no one in his circle to talk about his misery...
+
+I share this sh\*tty piece with you untouched, because I want you to know this is for
+real and I am afraid his madness is contagious. So *Ctrl-C + Ctrl-V*:
+
+```python
+class DimensionCreatedOnDevice(BaseModel):
+    """
+    Marks dimensions that were added to a DDM of a given trial because they were either:
+    - created on the mobile app
+    - linked to a new plot on the mobile app, and the dimension wasn't present in a server DDM at the time of sync
+      (e.g. the user selected the dimension from the trial's customer_dimensions list)
+
+    Note that there is no data migration:
+    only records created after this model will be marked.
+
+    Currently this is used only by trials with a manual layout,
+    and it was introduced together with that layout (hence why the data migration is missing).
+    """
+
+    trial = models.ForeignKey("Trial", on_delete=models.CASCADE)
+    dimension = models.ForeignKey("Dimension", on_delete=models.CASCADE)
+
+    class Meta(BaseModel.Meta):
+        unique_together = ("trial", "dimension")
+```
+
+The comment says it clearly: this is not an accident, nor an experiment. You may notice
+the clean coding discipline: clear and simple names, using whitespace in code and comments,
+finally some comments that mention **why** the code is there (woohoo!). So this is not
+happening in his first year, but clearly his reached his limits...
+
+I have only one word for you mate:
+
+![booleans](./res/booleans.png)
+
+
 
 
 ### zipping things just to ignore them

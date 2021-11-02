@@ -1,8 +1,8 @@
 ## Welcome to hopeless programming
 
 
-Nobody cares for good (or even best) practices, so it is time to expose them jewels here.
-Enjoy these little stinkers I had to work with.
+Nobody cares for good (or even best) practices, so it is time to expose them
+jewels here. Enjoy these little stinkers I had to work with.
 
 
 ### I can do anything syndrome
@@ -88,17 +88,20 @@ while (i < nColumns && j < nRanges && i >= 0 && j >= 0) {
     }
 }
 ```
-Can you feel the _brain fart_ of this poor little fucker? He clearly has some discipline,
-trying to keep the things readable, but obviously he has no clue how to do it. But that
-does not stop him, he can overpower anything with his brain... is it?
+Can you feel the _brain fart_ of this poor little fucker? He clearly has some
+discipline, trying to keep the things readable, but obviously he has no clue how
+to do it. But that does not stop him, he can overpower anything with his brain...
 
-He has not heard of higher level concepts. This guy codes like he's working out.
+_-- Have you ever heard of higher level concepts? You code like you're working
+out, just to burn calories._
+
 
 
 ### Terrible idea two
 
-This little stinker I found in a django project, with rest framework and all that jazz.
-But that's too mainstream for my dude, he prefers to serialize the values on his own terms.
+The next gem was found in a django project, with rest framework and all that jazz.
+But that's too mainstream for my dude, he prefers to serialize the values on his
+own terms.
 
 ```python
 def serialize_datetime(value, bigquery_compatibility=False):
@@ -113,16 +116,22 @@ def serialize_datetime(value, bigquery_compatibility=False):
         return "{}Z".format(value.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
 ```
 
-_Rule of thumb_: Never trust an `if`, I hear they are highly criticized lately. Use `assert` instead.
+_Rule of thumb_: Never trust an `if`, I hear they are highly criticized lately.
+Use `assert` instead.
+
+If read that assert carefully, you will see that he is aware of his doings, but
+simply did not land on the right [stackoverflow](https://stackoverflow.com/) post.
+
 
 
 ### Tell me you're an amateur, without ...
 
-This guy had no friends in the coding business. I say "no friends", but *no acqauintances*
-would be more precise; no one in his circle to talk about his misery...
+This guy had no friends in the coding business. I say "no friends", but *no
+acqauintances* would be more precise; no one in his circle to talk about his
+misery...
 
-I share this sh\*tty piece with you untouched, because I want you to know this is for
-real and I am afraid his madness is contagious. So *Ctrl-C + Ctrl-V*:
+I share this sh\*tty piece with you untouched, because I want you to know this
+is for real and I am afraid his madness is contagious. So *Ctrl-C + Ctrl-V*:
 
 ```python
 class DimensionCreatedOnDevice(BaseModel):
@@ -146,14 +155,15 @@ class DimensionCreatedOnDevice(BaseModel):
         unique_together = ("trial", "dimension")
 ```
 
-The comment says it clearly: this is not an accident, nor an experiment. You may notice
-the clean coding discipline: clear and simple names, using whitespace in code and comments,
-finally some comments that mention **why** the code is there (woohoo!). So this is not
-happening in his first year, but clearly his reached his limits...
+The comment says it clearly: this is not an accident, nor an experiment. You may
+notice the clean coding discipline: clear and simple names, using whitespace in
+code and comments and finally some comments that mention **why** the code is
+there (woohoo!). So this is not happening in his first year, but clearly he has
+reached his limits in this domain...
 
-I have only one word for you mate:
+I have just one meme for you mate:
 
-![booleans](./res/booleans.png)
+![booleans](./res/booleans.jpeg)
 
 
 
@@ -192,9 +202,11 @@ At this point i believe he's just trolling us, the for iterations are killing me
 If you notice in one iteration is picking up the `value_type` and in the next one
 the `name`. In the end he is zipping *attributes* with *attributes*!
 
-This guy must be _certifiable_, his code is shortening my life more than my cigarettes.
+This guy must be _certifiable_, his code is shortening my life more than my
+cigarettes.
 
 
-### Support or Contact
+
+## Support or Contact
 
 If you reconize your little stinkers, please write me a short message [here](http://dev/null) and I might restore my respect for you.

@@ -244,6 +244,95 @@ cigarettes.
 ---
 
 
+Here's another round mental push-up this guy forced on us (_fellow coders_).
+
+At the end of 80 lines of code method called `save_all()` that saves a bunch of
+objects to database, he casually throws this line:
+
+> in _some_serializer.py :: save_all()_ method
+
+```python
+        if affected_dataset_ids:
+            markers.mark_traits_to_load_from_ds(self.tenant, affected_dataset_ids)
+            markers.mark_visits_to_load_from_ds(self.tenant, affected_dataset_ids)
+        if affected_scheduled_visit_ids:
+            markers.mark_visits_to_load_from_sv(self.tenant, affected_scheduled_visit_ids)
+```
+
+It is quite a common practice in our project to mark new data to let other services
+know there is new data available. So let's see where that leads...
+
+> in _markers.py_ module
+
+```python
+def mark_traits_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int]):
+    _mark_to_load_from_ds(tenant, ds_ids, mark_traits_to_load)
+```
+
+Yeah, using type-hinting and a redirected function call, not a terrible practice
+when you want to keep some public facing interface more stable...
+
+> Wait, where is that **mark_traits_to_load** symbol coming from ?
+
+>> Ah, no biggie, it's another function in the same module (phew), here it is:
+
+>> ```python
+>> def mark_traits_to_load(tenant: models.Tenant, trial_ids: List[int]):
+>>     _mark_to_load(models.DWTraitToLoad, tenant, trial_ids)
+>>
+>> ```
+
+This sounds almost reasonable, until you think this through at least: passing a
+local function to another local function in the same module !?
+
+[This is some serious gourmet shit](./res/serious-gourmet.gif)
+
+
+Let's go back tracing the first function, following that private function call:
+
+```python
+def _mark_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int], mark_to_load_from_trial):
+    trial_ids = models.Dataset.objects.filter(pk__in=ds_ids).values_list("trial_id", flat=True).distinct()
+    mark_to_load_from_trial(tenant, trial_ids)
+```
+
+Ah, those type hints get borring real quick, there is no reason to add them on
+each parameter!
+
+Finally, some database juices are flowing in and immediately the _so long_
+carried function kicks in. I wonder where it leads...
+
+> _F*ck!_ Now I can't use the _Jump to definition_ shortcut that my editor so
+> kindly provides... so scrolling up and now I'm following the passed function:
+
+```python
+def mark_traits_to_load(tenant: models.Tenant, trial_ids: List[int]):
+    _mark_to_load(models.DWTraitToLoad, tenant, trial_ids)
+
+```
+
+> Another indirection in the SAME module (facepalm)
+> _Can you feel the muscles working already?_
+
+```python
+def _mark_to_load(model: Type, tenant: models.Tenant, trial_ids: List[int]):
+    if not trial_ids:
+        return
+    model.objects.bulk_create([model(tenant=tenant, trial_id=trial_id) for trial_id in set(trial_ids)])
+```
+
+Oh, great, we hit the bottom, now we can see what was so precious that needed to
+be protected from those volatile external calls:
+
+* a query of a **hard-coded** model name, and
+* a bulk create of another **hard-coded** model name
+
+Do you feel disappointed? Me too... All those pushups for nothing.
+
+
+---
+
+
 ## Support or Contact
 
 If you reconize your little stinkers, please write me a short message

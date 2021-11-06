@@ -260,13 +260,15 @@ casually he throws these:
 
 ```python
 if affected_dataset_ids:
-    markers.mark_traits_to_load_from_ds(self.tenant, affected_dataset_ids)
+    markers.mark_traits_to_load_from_ds(self.tenant, affected_dataset_ids) [^1]
     markers.mark_visits_to_load_from_ds(self.tenant, affected_dataset_ids)
 
 if affected_scheduled_visit_ids:
     markers.mark_visits_to_load_from_sv(self.tenant, affected_scheduled_visit_ids)
 ```
  So let's see where that leads...
+
+[^1]: pam pam
 
 
 ### The rabbit hole
@@ -337,6 +339,8 @@ be protected from those volatile external calls:
 * a bulk create of another **hard-coded** model name
 
 Quite dissapointing, I know...
+
+Now, let's trace the second
 
 ```python
 def mark_visits_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int]):

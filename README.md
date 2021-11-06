@@ -244,23 +244,30 @@ cigarettes.
 ---
 
 
-Here's another round mental push-up this guy forced on us (_fellow coders_).
+## Just follow me, if you can
 
-At the end of 80 lines of code method called `save_all()` that saves a bunch of
-objects to database, he casually throws this line:
+
+Here's another round mental push-up this guy forced on us _fellow coders_.
+
+At the end of an 80 lines of code method called `save_all()` that saves a bunch of
+objects to database, he casually throws this:
 
 > in _some_serializer.py :: save_all()_ method
 
 ```python
-        if affected_dataset_ids:
-            markers.mark_traits_to_load_from_ds(self.tenant, affected_dataset_ids)
-            markers.mark_visits_to_load_from_ds(self.tenant, affected_dataset_ids)
-        if affected_scheduled_visit_ids:
-            markers.mark_visits_to_load_from_sv(self.tenant, affected_scheduled_visit_ids)
+    if affected_dataset_ids:
+        markers.mark_traits_to_load_from_ds(self.tenant, affected_dataset_ids)
+        markers.mark_visits_to_load_from_ds(self.tenant, affected_dataset_ids)
+
+    if affected_scheduled_visit_ids:
+        markers.mark_visits_to_load_from_sv(self.tenant, affected_scheduled_visit_ids)
 ```
 
-It is quite a common practice in our project to mark new data to let other services
-know there is new data available. So let's see where that leads...
+It is quite a common practice in our project to leave data markers to let other
+services know there is new data available. So let's see where that leads...
+
+
+### The rabbithole
 
 > in _markers.py_ module
 
@@ -282,11 +289,10 @@ when you want to keep some public facing interface more stable...
 >>
 >> ```
 
-This sounds almost reasonable, until you think this through at least: passing a
-local function to another local function in the same module !?
+This sounds almost reasonable, until you think this through: passing a local
+function to another local function in the same module !?
 
-[This is some serious gourmet shit](./res/serious-gourmet.gif)
-
+![This is some serious gourmet shit](./res/serious-gourmet.gif)
 
 Let's go back tracing the first function, following that private function call:
 
@@ -327,9 +333,34 @@ be protected from those volatile external calls:
 * a query of a **hard-coded** model name, and
 * a bulk create of another **hard-coded** model name
 
-[Massive facepalm](./res/facepalm.jpeg)
+> Quite dissapointing, I know... It's not over...
 
-Do you feel disappointed? Me too... All those pushups for nothing.
+```python
+def mark_visits_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int]):
+    _mark_to_load_from_ds(tenant, ds_ids, mark_visits_to_load)
+
+```
+
+ > Oh sh\*t, straight into _The rabbithole_ again. This time with another flavor
+ > of those precious local functions:
+
+```python
+def mark_visits_to_load(tenant: models.Tenant, trial_ids: List[int]):
+    # filter out any trial_id with no scheduled visit defined
+    trial_ids = list(
+        models.Trial.objects.annotate(n_visits=Count("scheduled_visits"))
+        .filter(pk__in=trial_ids, n_visits__gt=0)
+        .values_list("pk", flat=True)
+    )
+    _mark_to_load(models.DWVisitsToLoad, tenant, trial_ids)
+```
+
+And, tust to spice things up, this time he ignores the list of passed ids and
+does its own query anyway.
+
+![Massive facepalm](./res/facepalm.jpeg)
+
+I'll never recover from this.
 
 
 ---

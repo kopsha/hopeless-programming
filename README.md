@@ -244,27 +244,29 @@ cigarettes.
 ---
 
 
-## Just follow me, if you can
+## Code Inception
 
 
-Here's another round mental push-up this guy forced on us _fellow coders_.
+After seeing the [Inception](https://www.imdb.com › title) movie, nothing is too
+meta for this guy. Here comes another round mental pushups forced on us _fellow
+coders_.
 
-At the end of an 80 lines of code method called `save_all()` that saves a bunch of
-objects to database, he casually throws this:
+At the end of an 80 lines of code method called _save_all()_ that saves a bunch
+of objects to the database. It is quite a common practice in our project to leave
+data markers to let other services know there is new data available, very
+casually he throws these:
 
-> in _some_serializer.py :: save_all()_ method
+> in _some_serializer.py :: save_all()_
 
 ```python
-    if affected_dataset_ids:
-        markers.mark_traits_to_load_from_ds(self.tenant, affected_dataset_ids)
-        markers.mark_visits_to_load_from_ds(self.tenant, affected_dataset_ids)
+if affected_dataset_ids:
+    markers.mark_traits_to_load_from_ds(self.tenant, affected_dataset_ids)
+    markers.mark_visits_to_load_from_ds(self.tenant, affected_dataset_ids)
 
-    if affected_scheduled_visit_ids:
-        markers.mark_visits_to_load_from_sv(self.tenant, affected_scheduled_visit_ids)
+if affected_scheduled_visit_ids:
+    markers.mark_visits_to_load_from_sv(self.tenant, affected_scheduled_visit_ids)
 ```
-
-It is quite a common practice in our project to leave data markers to let other
-services know there is new data available. So let's see where that leads...
+ So let's see where that leads...
 
 
 ### The rabbit hole
@@ -277,19 +279,21 @@ def mark_traits_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int]):
 ```
 
 Yeah, using type-hinting and a redirected function call, not a terrible practice
-when you want to keep some public facing interface more stable...
+when you want to keep some interfaces stable...
 
 > Wait, where is that **mark_traits_to_load** symbol coming from ?
 > Oh, no biggie, it's another function in the same module (phew), here it is:
-
->> ```python
->> def mark_traits_to_load(tenant: models.Tenant, trial_ids: List[int]):
->>     _mark_to_load(models.DWTraitToLoad, tenant, trial_ids)
->>
->> ```
+>
+> ```python
+> def mark_traits_to_load(tenant: models.Tenant, trial_ids: List[int]):
+>     _mark_to_load(models.DWTraitToLoad, tenant, trial_ids)
+> ```
+>
+> So, passing a hard-coded model class to another local function.
 
 This sounds almost reasonable, until you think this through: passing a local
-function to another local function in the same module !?
+function to another local function in the same module, which only calls a third
+local function !?
 
 ![This is some serious gourmet shit](./res/serious-gourmet.gif){:width="250px" height="141px"}
 
@@ -301,14 +305,14 @@ def _mark_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int], mark_to_
     mark_to_load_from_trial(tenant, trial_ids)
 ```
 
-Ah, those type hints get borring real quick, there is no reason to add them on
+So, those type hints get borring real quick, there is no reason to add them on
 each parameter!
 
 Finally, some database juices are flowing in and immediately the _so long_
 carried function kicks in. I wonder where it leads...
 
 > _F\*ck!_ Now I can't use the _Jump to definition_ shortcut that my editor so
-> kindly provides... so scrolling up and now I'm following the passed function:
+> kindly provides... so scrolling up and I read the passed function:
 
 ```python
 def mark_traits_to_load(tenant: models.Tenant, trial_ids: List[int]):
@@ -340,10 +344,8 @@ def mark_visits_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int]):
 
 ```
 
-Sh\*t, we're thrown straight into _The rabbit hole_ again, but this time with
-another flavor of those precious local functions.
-
-_Can you feel the muscles working already?_
+Sh\*t, we're thrown straight into [The rabbit hole](#the-rabbit-hole) again, but
+this time with another flavor of those precious local functions.
 
 
 ```python
@@ -357,10 +359,11 @@ def mark_visits_to_load(tenant: models.Tenant, trial_ids: List[int]):
     _mark_to_load(models.DWVisitsToLoad, tenant, trial_ids)
 ```
 
-And, just to spice things up, this time he ignores the passed ids and does its
-own query anyway.
+Yup, the same hard-coded model class, and, just to spice things up, this time he
+ignores the passed ids and does its own query anyway.
 
 ![Massive facepalm](./res/facepalm.jpeg)
+
 
 I'll never recover from this.
 

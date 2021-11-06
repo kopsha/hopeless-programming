@@ -311,7 +311,7 @@ def mark_traits_to_load(tenant: models.Tenant, trial_ids: List[int]):
 
 ```
 
-> Another indirection in the SAME module (facepalm)
+> Another indirection in the SAME module
 > _Can you feel the muscles working already?_
 
 ```python
@@ -326,6 +326,8 @@ be protected from those volatile external calls:
 
 * a query of a **hard-coded** model name, and
 * a bulk create of another **hard-coded** model name
+
+[Massive facepalm](./res/facepalm.jpeg)
 
 Do you feel disappointed? Me too... All those pushups for nothing.
 

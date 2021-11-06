@@ -194,7 +194,7 @@ reached his limits in this domain...
 
 I have just one meme for you mate:
 
-![booleans](./res/booleans.jpeg){:width="300px" height="214px"}.
+![booleans](./res/booleans.jpeg){:width="300px" height="214px"}
 
 
 
@@ -267,7 +267,7 @@ It is quite a common practice in our project to leave data markers to let other
 services know there is new data available. So let's see where that leads...
 
 
-### The rabbithole
+### The rabbit hole
 
 > in _markers.py_ module
 
@@ -280,8 +280,7 @@ Yeah, using type-hinting and a redirected function call, not a terrible practice
 when you want to keep some public facing interface more stable...
 
 > Wait, where is that **mark_traits_to_load** symbol coming from ?
-
->> Ah, no biggie, it's another function in the same module (phew), here it is:
+> Oh, no biggie, it's another function in the same module (phew), here it is:
 
 >> ```python
 >> def mark_traits_to_load(tenant: models.Tenant, trial_ids: List[int]):
@@ -292,7 +291,7 @@ when you want to keep some public facing interface more stable...
 This sounds almost reasonable, until you think this through: passing a local
 function to another local function in the same module !?
 
-![This is some serious gourmet shit](./res/serious-gourmet.gif)
+![This is some serious gourmet shit](./res/serious-gourmet.gif){:width="250px" height="141px"}
 
 Let's go back tracing the first function, following that private function call:
 
@@ -308,7 +307,7 @@ each parameter!
 Finally, some database juices are flowing in and immediately the _so long_
 carried function kicks in. I wonder where it leads...
 
-> _F*ck!_ Now I can't use the _Jump to definition_ shortcut that my editor so
+> _F\*ck!_ Now I can't use the _Jump to definition_ shortcut that my editor so
 > kindly provides... so scrolling up and now I'm following the passed function:
 
 ```python
@@ -317,8 +316,8 @@ def mark_traits_to_load(tenant: models.Tenant, trial_ids: List[int]):
 
 ```
 
-> Another indirection in the SAME module
-> _Can you feel the muscles working already?_
+Another indirection in the _same_ module, because... we might be paid by the line
+of code soon.
 
 ```python
 def _mark_to_load(model: Type, tenant: models.Tenant, trial_ids: List[int]):
@@ -333,7 +332,7 @@ be protected from those volatile external calls:
 * a query of a **hard-coded** model name, and
 * a bulk create of another **hard-coded** model name
 
-> Quite dissapointing, I know... It's not over...
+Quite dissapointing, I know...
 
 ```python
 def mark_visits_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int]):
@@ -341,8 +340,11 @@ def mark_visits_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int]):
 
 ```
 
- > Oh sh\*t, straight into _The rabbithole_ again. This time with another flavor
- > of those precious local functions:
+Sh\*t, we're thrown straight into _The rabbit hole_ again, but this time with
+another flavor of those precious local functions.
+
+_Can you feel the muscles working already?_
+
 
 ```python
 def mark_visits_to_load(tenant: models.Tenant, trial_ids: List[int]):
@@ -355,8 +357,8 @@ def mark_visits_to_load(tenant: models.Tenant, trial_ids: List[int]):
     _mark_to_load(models.DWVisitsToLoad, tenant, trial_ids)
 ```
 
-And, tust to spice things up, this time he ignores the list of passed ids and
-does its own query anyway.
+And, just to spice things up, this time he ignores the passed ids and does its
+own query anyway.
 
 ![Massive facepalm](./res/facepalm.jpeg)
 

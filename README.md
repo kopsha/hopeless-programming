@@ -420,8 +420,10 @@ def mark_labels_from_template(account, template_ids):
 > Why would you store any product ids in the template model? I cannot imagine.
 
 
-And I think we have seen this function above, so we are at the end of our trip.
-What a horrile journey... I'll never recover from this.
+And I think we have seen this function just before, so we are at the end of our
+trip. What a terrible journey.
+
+I'll never recover from this!
 
 
 ---

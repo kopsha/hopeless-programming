@@ -25,7 +25,12 @@ So give it a go and write a code that proves you’re a real hacker...
 ---
 
 
-## I can do anything syndrome
+## The _code_ must go on
+
+
+While I was hunting a minor bug in a front-end component, that arranges some
+objects in a simple grid following various patterns, I found this precious gem,
+which appears to be _so carefully crafted_:
 
 ```typescript
 let i = iStart;
@@ -108,23 +113,47 @@ while (i < nColumns && j < nRanges && i >= 0 && j >= 0) {
     }
 }
 ```
-Can you feel the _brain fart_ of this poor little fucker? He clearly has some
-discipline, trying to keep the things readable, but obviously he has no clue how
-to do it. But that does not stop him, he can overpower anything with his brain...
 
-_-- Have you ever heard of higher level concepts? You code like you're working
-out, just to burn calories._
+
+If this is not a _brain fart_, then I don't know what is. Clearly he is aware of
+the nightmare he just created, but compensates with some clean coding discipline,
+trying to keep the things readable, but obviously he has no clue how to really
+do it. Still, that's no reason to stop and think things through.
+
+> -- Dude, have you ever heard of higher level concepts? You code like you're
+> working out, just to burn calories!
+
+
+Now, he's not working with us anymore (what a surprise) and I have to fix the
+bug in that apparently clean mess. :poop:
+
+> Yay, go me!
 
 
 
 ---
 
 
-## Terrible idea two
+## True hipsters never let frameworks to handle timezones
 
-The next gem was found in a django project, with rest framework and all that jazz.
-But that's too mainstream for my dude, he prefers to serialize the values on his
-own terms.
+
+The next gem (worthy to be printed on our daily toilet paper) was found in a
+Django project, fully packed with REST framework and all third party libraries
+known to man. You should really struggle to write any low level processing code
+these days, (almost) everything was solved by people with much more experience
+and they also had the decency to share it with everyone for _free_.
+
+It is worth knowing that in this project, our users are spread on all continents
+(except the poles), and they are sending data to our central server every day.
+So dealing with time zones is not really a thing far into the future, we need
+this solved _yesterday_!
+
+So, how do we go about adding such a feature?
+Maybe [ISO standards](https://en.wikipedia.org/wiki/ISO_8601), or maybe use
+[strftime()](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior),
+or even REST framework serializer's [DateTimeField](https://www.django-rest-framework.org/api-guide/fields/#datetimefield)? Naah that's too mainstream for my hipster dude, he
+prefers to serialize the timestamps on his own terms:
+
 
 ```python
 def serialize_datetime(value, bigquery_compatibility=False):
@@ -139,21 +168,24 @@ def serialize_datetime(value, bigquery_compatibility=False):
         return "{}Z".format(value.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
 ```
 
-_Rule of thumb_: Never trust an **if**, I hear they are highly criticized lately.
-Use **assert** instead.
+
+_Rule of thumb_: Never trust an **if**, it forces you to deal with one maybe two
+situation(s)... I hear they are highly criticized lately, use **assert**s instead.
 
 If you read that assert carefully, you will see that he is aware of his doings,
 but simply did not land on the right [stackoverflow](https://stackoverflow.com/)
 post.
 
+> As Albert Einstein once said: "Two things are infinite: the universe and human
+> stupidity; and I'm not sure about the universe."
 
 
 ---
 
 
-## Tell me you're an amateur, without ...
+## Data guys cannot write code
 
-This guy had no friends in the coding business. I say "no friends", but *no
+This dude had no friends in the coding business. I say "no friends", but *no
 acqauintances* would be more precise; no one in his circle to talk about his
 misery...
 
@@ -163,27 +195,19 @@ is for real, also I am afraid his madness is contagious... So *Ctrl-C + Ctrl-V*:
 ```python
 class DimensionCreatedOnDevice(BaseModel):
     """
-    Marks dimensions that were added to a DDM of a given trial because they were
-    either:
-    - created on the mobile app
-    - linked to a new plot on the mobile app, and the dimension wasn't present
-    in a server DDM at the time of sync
-      (e.g. the user selected the dimension from the trial's customer_dimensions
-      list)
-
     Note that there is no data migration:
     only records created after this model will be marked.
 
-    Currently this is used only by trials with a manual layout,
+    Currently this is used only by products with a manual layout,
     and it was introduced together with that layout (hence why the data migration
     is missing).
     """
 
-    trial = models.ForeignKey("Trial", on_delete=models.CASCADE)
+    product = models.ForeignKey("Product", on_delete=models.CASCADE)
     dimension = models.ForeignKey("Dimension", on_delete=models.CASCADE)
 
     class Meta(BaseModel.Meta):
-        unique_together = ("trial", "dimension")
+        unique_together = ("product", "dimension")
 ```
 
 The comment says it clearly: this is not an accident, nor an experiment. You may
@@ -192,25 +216,27 @@ code and comments and finally some comments that mention **why** the code is
 there (woohoo!). So this is not happening in his first year, but clearly he has
 reached his limits in this domain...
 
-I have just one meme for you mate:
+Oh, I get it, he's a SQL guy...
 
-![booleans](./res/booleans.jpeg){:width="300px" height="214px"}
-
-
+> I have just one meme for you mate:
+>
+> ![booleans](./res/booleans.jpeg){:width="300px" height="214px"}
 
 
 ---
 
 
-## zipping things just to ignore them
+## When you learn about zip()
 
-Have a look at this idiocy:
+
+Obviously our friend learned about python's built-in _zip()_ function and cannot
+contain himself until he uses it. Have a look at this idiocy:
 
 ```python
 def create_attributes(self, dim_meta, attributes):
     saved_attributes = [
         AttributeMeta(
-            tenant=self.tenant,
+            account=self.account,
             dimension_meta=dim_meta,
             order=order,
             type=value_type,
@@ -229,7 +255,7 @@ def create_attributes(self, dim_meta, attributes):
     return saved_attributes
 ```
 
-At this point i believe he's just trolling us, the for iterations are killing me:
+At this point I wonder if he's trolling us? The for iterations are killing me:
 * first `for order, (_, value_type) in enumerate(attributes)`
 * then `for attr, (name, _) in zip(saved_attributes, attributes):`
 
@@ -244,71 +270,77 @@ cigarettes.
 ---
 
 
-## Code Inception
+## Coding inceptions
 
 
-After seeing the [Inception](https://www.imdb.com › title) movie, nothing is too
-meta for this guy. Here comes another round mental pushups forced on us _fellow
-coders_.
+After seeing the [Inception](https://www.imdb.com/title/tt1375666/) movie,
+nothing seems _too meta_ for this guy. Here comes another round mental pushups
+forced on us _fellow coders_.
 
-At the end of an 80 lines of code method called _save_all()_ that saves a bunch
-of objects to the database. It is quite a common practice in our project to leave
-data markers to let other services know there is new data available, very
-casually he throws these:
+In this project, it is quite common to leave some some data markers to let other
+services know there is new data available. So, at the end of an 80 lines of code
+method called _save_all()_, our friend throws these bad boys:
 
 > in _some_serializer.py :: save_all()_
 
 ```python
-if affected_dataset_ids:
-    markers.mark_traits_to_load_from_ds(self.tenant, affected_dataset_ids) [^1]
-    markers.mark_visits_to_load_from_ds(self.tenant, affected_dataset_ids)
+if updated_ids:
+    markers.mark_boxes_from_dataset(account, updated_ids)
+    markers.mark_labels_from_dataset(account, updated_ids)
 
-if affected_scheduled_visit_ids:
-    markers.mark_visits_to_load_from_sv(self.tenant, affected_scheduled_visit_ids)
+if updated_template_ids:
+    markers.mark_labels_from_template(account, updated_template_ids)
 ```
- So let's see where that leads...
-
-[^1]: pam pam
 
 
-### The rabbit hole
+I am sure I'm going to regret this, but let's have a look at them
+
+
+
+### Down the rabbit hole
+
 
 > in _markers.py_ module
 
 ```python
-def mark_traits_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int]):
-    _mark_to_load_from_ds(tenant, ds_ids, mark_traits_to_load)
+def mark_boxes_from_dataset(account, dataset_ids):
+    _mark_from_dataset(account, dataset_ids, mark_to_load)
 ```
 
-Yeah, using type-hinting and a redirected function call, not a terrible practice
-when you want to keep some interfaces stable...
 
-> Wait, where is that **mark_traits_to_load** symbol coming from ?
+Yeah, a redirected function call, not a terrible practice after all, when you
+want to keep some interfaces stable...
+
+> Wait, where is that **mark_to_load** symbol coming from ?
 > Oh, no biggie, it's another function in the same module (phew), here it is:
 >
 > ```python
-> def mark_traits_to_load(tenant: models.Tenant, trial_ids: List[int]):
->     _mark_to_load(models.DWTraitToLoad, tenant, trial_ids)
+> def mark_to_load(account: models.Account, ids: List[int]):
+>     _mark_to_load(models.ProductsToLoad, account, ids)
 > ```
 >
-> So, passing a hard-coded model class to another local function.
+> This dude has created a new model to trace the database updates? 🤨 But I
+> digress, we'll take on that another time.
 
-This sounds almost reasonable, until you think this through: passing a local
-function to another local function in the same module, which only calls a third
-local function !?
+So, passing a hard-coded model class to another local function using the same
+name. This sounds almost reasonable, until you think this through: passing a
+local function to another local function in the same module, which only calls a
+third local function.
 
 ![This is some serious gourmet shit](./res/serious-gourmet.gif){:width="250px" height="141px"}
 
-Let's go back tracing the first function, following that private function call:
+
+Are you still with me? Good, let's go back tracing the first function, following
+that private function call:
 
 ```python
-def _mark_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int], mark_to_load_from_trial):
-    trial_ids = models.Dataset.objects.filter(pk__in=ds_ids).values_list("trial_id", flat=True).distinct()
-    mark_to_load_from_trial(tenant, trial_ids)
+def _mark_from_dataset(account, ds_ids, mark_to_load):
+    product_ids = Dataset.objects.filter(pk__in=ds_ids).values_list("product_id", flat=True)
+    mark_to_load(account, product_ids)
 ```
 
-So, those type hints get borring real quick, there is no reason to add them on
-each parameter!
+Oh yeah, naming a callable parameter same as the local function being passed can
+only bring some nice variations in your borring office life. But let's move on...
 
 Finally, some database juices are flowing in and immediately the _so long_
 carried function kicks in. I wonder where it leads...
@@ -317,22 +349,28 @@ carried function kicks in. I wonder where it leads...
 > kindly provides... so scrolling up and I read the passed function:
 
 ```python
-def mark_traits_to_load(tenant: models.Tenant, trial_ids: List[int]):
-    _mark_to_load(models.DWTraitToLoad, tenant, trial_ids)
-
+def mark_to_load(account: models.Account, ids: List[int]):
+    _mark_to_load(models.ProductsToLoad, account, ids)
 ```
 
-Another indirection in the _same_ module, because... we might be paid by the line
-of code soon.
+
+Another indirection in the _same_ module, because "I am a programmer and I have
+no life"... And we might be paid by the line of code pretty soon.
+
 
 ```python
-def _mark_to_load(model: Type, tenant: models.Tenant, trial_ids: List[int]):
+def _mark_to_load(model, account, product_ids):
     if not trial_ids:
         return
-    model.objects.bulk_create([model(tenant=tenant, trial_id=trial_id) for trial_id in set(trial_ids)])
+    model.objects.bulk_create(
+        [model(account=account, product_id=product_id) for product_id in set(trial_ids)]
+    )
 ```
 
-Oh, great, we hit the bottom, now we can see what was so precious that needed to
+> Great, that _set()_ conversion is a going to help a lot with the performance.
+
+
+Luckily we hit the bottom, and now we can see what was so precious that needed to
 be protected from those volatile external calls:
 
 * a query of a **hard-coded** model name, and
@@ -340,11 +378,11 @@ be protected from those volatile external calls:
 
 Quite dissapointing, I know...
 
-Now, let's trace the second
+Now, let's trace the second marker function call:
 
 ```python
-def mark_visits_to_load_from_ds(tenant: models.Tenant, ds_ids: Sequence[int]):
-    _mark_to_load_from_ds(tenant, ds_ids, mark_visits_to_load)
+def mark_labels_from_dataset(account, ds_ids):
+    _mark_from_dataset(account, ds_ids, mark_labels_to_load)
 
 ```
 
@@ -353,23 +391,37 @@ this time with another flavor of those precious local functions.
 
 
 ```python
-def mark_visits_to_load(tenant: models.Tenant, trial_ids: List[int]):
-    # filter out any trial_id with no scheduled visit defined
-    trial_ids = list(
-        models.Trial.objects.annotate(n_visits=Count("scheduled_visits"))
-        .filter(pk__in=trial_ids, n_visits__gt=0)
+def mark_labels_to_load(account, ds_ids):
+    # filter out any product_id with no label defined
+    ds_ids = list(
+        Product.objects.annotate(n_labels=Count("labels"))
+        .filter(pk__in=ds_ids, n_labels__gt=0)
         .values_list("pk", flat=True)
     )
-    _mark_to_load(models.DWVisitsToLoad, tenant, trial_ids)
+    _mark_to_load(models.ProductsToLoad, account, ds_ids)
 ```
 
 Yup, the same hard-coded model class, and, just to spice things up, this time he
-ignores the passed ids and does its own query anyway.
+overrides the passed ids so we cannot remember what they are; products or
+datasets? :man_facepalming: At least, this time we are redirected to the bottom
+of the last rabbit hole.
 
-![Massive facepalm](./res/facepalm.jpeg)
+
+And now the last marker:
+
+```python
+def mark_labels_from_template(account, template_ids):
+    product_ids = (
+        LabelTemplate.objects.filter(pk__in=template_ids).values_list("product_id", flat=True)
+    )
+    mark_labels_to_load(tenant, product_ids)
+```
+
+> Why would you store any product ids in the template model? I cannot imagine.
 
 
-I'll never recover from this.
+And I think we have seen this function above, so we are at the end of our trip.
+What a horrile journey... I'll never recover from this.
 
 
 ---

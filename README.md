@@ -216,9 +216,9 @@ code and comments and finally some comments that mention **why** the code is
 there (woohoo!). So this is not happening in his first year, but clearly he has
 reached his limits in this domain...
 
-Oh, I get it, he's a SQL guy...
+Oh, I get it, he's an SQL guy who got lost among coders...
 
-> I have just one meme for you mate:
+> -- I have just one meme for you mate:
 >
 > ![booleans](./res/booleans.jpeg){:width="300px" height="214px"}
 

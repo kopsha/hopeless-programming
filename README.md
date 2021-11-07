@@ -319,7 +319,7 @@ want to keep some interfaces stable...
 >     _mark_to_load(models.ProductsToLoad, account, ids)
 > ```
 >
-> This dude has created a new model to trace the database updates? 🤨 But I
+> This dude has created a new model to trace the database updates? But I
 > digress, we'll take on that another time.
 
 So, passing a hard-coded model class to another local function using the same
@@ -340,10 +340,10 @@ def _mark_from_dataset(account, ds_ids, mark_to_load):
 ```
 
 Oh yeah, naming a callable parameter same as the local function being passed can
-only bring some nice variations in your borring office life. But let's move on...
+only bring some nice variations in your borring office life. Let's move on...
 
 Finally, some database juices are flowing in and immediately the _so long_
-carried function kicks in. I wonder where it leads...
+carried function kicks in and I can't remember what it does...
 
 > _F\*ck!_ Now I can't use the _Jump to definition_ shortcut that my editor so
 > kindly provides... so scrolling up and I read the passed function:
@@ -354,8 +354,8 @@ def mark_to_load(account: models.Account, ids: List[int]):
 ```
 
 
-Another indirection in the _same_ module, because "I am a programmer and I have
-no life"... And we might be paid by the line of code pretty soon.
+Another indirection in the _same_ module... 🤨 Like we might be paid by the line
+of code soon.
 
 
 ```python
@@ -366,6 +366,7 @@ def _mark_to_load(model, account, product_ids):
         [model(account=account, product_id=product_id) for product_id in set(trial_ids)]
     )
 ```
+
 
 > Great, that _set()_ conversion is a going to help a lot with the performance.
 

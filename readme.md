@@ -32,7 +32,7 @@ Basically: code like Rick would, if he wrote for the web.
    ```
 1. Install dependencies:
    ```bash
-   bundle exec jekyll serve
+   bundle install
    ```
 1. Build and serve the site locally:
    ```bash

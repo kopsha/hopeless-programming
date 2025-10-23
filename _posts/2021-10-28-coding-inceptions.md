@@ -59,7 +59,7 @@ name. This sounds almost reasonable, until you think this through: passing a
 local function to another local function in the same module, which only calls a
 third local function.
 
-![This is some serious gourmet shit](./res/serious-gourmet.gif){:width="250px" height="141px"}
+![This is some serious gourmet shit](/res/serious-gourmet.gif){:width="250px" height="141px"}
 
 
 Are you still with me? Good, let's go back tracing the first function, following

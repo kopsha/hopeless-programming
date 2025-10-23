@@ -2,4 +2,4 @@ title: Hopeless Programming
 description: A chronicle of over-engineered masterpieces.
 theme: jekyll-theme-merlot
 permalink: pretty
-
+baseurl: /hopeless-programming

@@ -4,6 +4,7 @@ title: "The Code Must Go On"
 date: 2025-10-23
 ---
 
+
 While I was hunting a minor bug in a front-end component, that arranges some
 objects in a simple grid following various patterns, I found this precious gem,
 which appears to be _so carefully crafted_:
@@ -90,4 +91,18 @@ while (i < nColumns && j < nRanges && i >= 0 && j >= 0) {
 }
 ```
 
-If this is not a _brain fart_, then I don't know what is...
+
+If this is not a _brain fart_, then I don't know what is. Clearly he is aware of
+the nightmare he just created, but compensates with some clean coding discipline,
+trying to keep the things readable, but obviously he has no clue how to really
+do it. Still, that's no reason to stop and think things through.
+
+> -- Dude, have you ever heard of higher level concepts? You code like you're
+> working out, just to burn calories!
+
+
+Now, he's not working with us anymore (what a surprise) and I have to fix the
+bug in that apparently clean mess. :poop:
+
+> Yay, go me!
+

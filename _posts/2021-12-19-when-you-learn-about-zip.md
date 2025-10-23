@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "When You Learn About zip()"
-date: 2025-10-23
+date: 2021-12-19
 ---
 
 Obviously our friend learned about python's built-in _zip()_ function and cannot

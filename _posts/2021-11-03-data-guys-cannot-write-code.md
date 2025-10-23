@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Guys Cannot Write Code"
-date: 2025-10-23
+date: 2021-11-03
 ---
 
 This dude had no friends in the coding business. I say "no friends", but *no

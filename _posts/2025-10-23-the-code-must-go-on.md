@@ -1,0 +1,93 @@
+---
+layout: post
+title: "The Code Must Go On"
+date: 2025-10-23
+---
+
+While I was hunting a minor bug in a front-end component, that arranges some
+objects in a simple grid following various patterns, I found this precious gem,
+which appears to be _so carefully crafted_:
+
+```typescript
+let i = iStart;
+let j = jStart;
+while (i < nColumns && j < nRanges && i >= 0 && j >= 0) {
+    let plot = this.plot(i, j);
+    if (plot) {
+        this.sorted.push(plot);
+    }
+    if (walkOrder === 'left_right') {
+        i += iDir;
+        if (i >= nColumns || i < 0) {
+            i = iStart;
+            j += jDir;
+        }
+    } else if (walkOrder === 'top_down') {
+        j += jDir;
+        if (j >= nRanges || j < 0) {
+            j = jStart;
+            i += iDir;
+        }
+    } else if (walkOrder === 'zig_zag_horizontal') {
+        if (j % 2 === jStart % 2) {
+            i += iDir;
+            if (i >= nColumns || i < 0) {
+                i = iEnd;
+                j += jDir;
+            }
+        } else {
+            i -= iDir;
+            if (i < 0 || i >= nColumns) {
+                i = iStart;
+                j += jDir;
+            }
+        }
+    } else if (walkOrder === 'zig_zag_vertical') {
+        if (i % 2 === iStart % 2) {
+            j += jDir;
+            if (j >= nRanges || j < 0) {
+                j = jEnd;
+                i += iDir;
+            }
+        } else {
+            j -= jDir;
+            if (j < 0 || j >= nRanges) {
+                j = jStart;
+                i += iDir;
+            }
+        }
+    } else if (walkOrder === '2rows_horizontal') {
+        if (j % 4 === jStart % 4) {
+            j += jDir;
+            if (j >= nRanges || j < 0) {
+                j = jEnd;
+                i += iDir;
+            }
+        } else if (j % 4 === (jStart + jDir) % 4) {
+            i += iDir;
+            if (i >= nColumns || i < 0) {
+                i = iEnd;
+                j += jDir;
+            } else {
+                j -= jDir;
+            }
+        } else if (j % 4 === (jStart + 2 * jDir) % 4) {
+            j += jDir;
+            if (j >= nRanges || j < 0) {
+                j = jEnd;
+                i -= iDir;
+            }
+        } else {
+            i -= iDir;
+            if (i >= nColumns || i < 0) {
+                i = iStart;
+                j += jDir;
+            } else {
+                j -= jDir;
+            }
+        }
+    }
+}
+```
+
+If this is not a _brain fart_, then I don't know what is...

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "Coding Inceptions"
 date: 2021-10-28
 categories: hopeless-programming

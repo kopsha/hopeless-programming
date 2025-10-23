@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "The Code Must Go On"
 date: 2021-11-06
 categories: hopeless-programming

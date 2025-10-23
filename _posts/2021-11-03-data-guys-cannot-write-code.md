@@ -40,5 +40,5 @@ Oh, I get it, he's an SQL guy who got lost among coders...
 
 > -- I have just one meme for you mate:
 >
-> ![booleans](res/booleans.jpeg){:width="300px" height="214px"}
+> ![booleans](/res/booleans.jpeg){:width="300px" height="214px"}
 

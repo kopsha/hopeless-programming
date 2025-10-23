@@ -3,4 +3,4 @@ description: A chronicle of over-engineered masterpieces.
 remote_theme: pages-themes/dinky@v0.2.0
 plugins:
     - jekyll-remote-theme
-permalink: /:categories/:year/:month/:title:html
+permalink: /:categories/:year/:month/:title

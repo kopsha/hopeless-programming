@@ -4,7 +4,8 @@ Your code will fail. The universe doesn't care. Bugs are inevitable. Warnings ar
 meaningless. If you want order, go somewhere else — here, chaos rules and sanity
 is a forgotten concept.
 
-If you want to become the Rick Sanchez of programming, congratulations — you're home.
+If you want to become the Rick Sanchez of programming, congratulations.
+You're home.
 
 It's not really that hard:
 - Make your code slightly more twisted than necessary and watch the chaos unfold.
@@ -15,12 +16,13 @@ It's not really that hard:
   and cram in clever one-liners that exploit obscure, hipster features of your
   favorite language.
 
-The sky's the limit!
+The sky is the limit!
 
-Sure, it will make the application harder to read and maintain — but that's
-probably your coworkers' problem, right? Excellent.
+Sure, it will make the application harder to read and maintain. But that's
+probably your coworkers' problem, right?
+Excellent.
 
-So go ahead — write code that proves you're a true hacker...
+Go ahead, write code that proves you're a true hacker...
 
 ---
 

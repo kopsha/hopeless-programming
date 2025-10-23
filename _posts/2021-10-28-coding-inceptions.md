@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: page
 title: "Coding Inceptions"
 date: 2021-10-28
+categories: hopeless-programming
 ---
 
 After seeing the [Inception](https://www.imdb.com/title/tt1375666/) movie,

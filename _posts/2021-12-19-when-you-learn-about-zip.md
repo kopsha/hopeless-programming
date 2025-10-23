@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: page
 title: "When You Learn About zip()"
 date: 2021-12-19
+categories: hopeless-programming
 ---
 
 Obviously our friend learned about python's built-in _zip()_ function and cannot

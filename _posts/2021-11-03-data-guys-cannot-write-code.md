@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: page
 title: "Data Guys Cannot Write Code"
 date: 2021-11-03
+categories: hopeless-programming
 ---
 
 This dude had no friends in the coding business. I say "no friends", but *no

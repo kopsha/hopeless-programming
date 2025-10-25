@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Endless Standup"
 date: 2025-10-23
 categories: the-great-abstraction-tragedy

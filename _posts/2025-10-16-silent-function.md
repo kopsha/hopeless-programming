@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Silent Function"
+date: 2025-10-16
+categories: the-great-abstraction-tragedy
+---
+
 # The Silent Function
 
 _once we coded_  

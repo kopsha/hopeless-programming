@@ -8,8 +8,6 @@ If your code isn't confusing someone, somewhere, are you even programming?
 ## What This Is
 
 This is a blog. A playground. A manifesto.  
-All posts live on `index` — because why split sanity across multiple pages when
-you can cram chaos into one?  
 
 Here you'll find:  
 - Over-engineered one-liners  

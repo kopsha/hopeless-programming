@@ -4,7 +4,7 @@ date: 2025-10-23
 categories: the-great-abstraction-tragedy
 ---
 
-# 🕰️ The Stand-up That Never Ends
+![Endless Standup](/res/endless-standup.png)
 
 **2003:**  
 We discovered Agile.  

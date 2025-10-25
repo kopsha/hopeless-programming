@@ -4,10 +4,8 @@ date: 2025-10-16
 categories: the-great-abstraction-tragedy
 ---
 
-# The Silent Function
+![Silent Function](/res/silent-function.png)
 
-_once we coded_  
-_now we configure_
 
 **1992:**  
 You wrote C.  

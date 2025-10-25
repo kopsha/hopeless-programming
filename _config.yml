@@ -1,4 +1,4 @@
 title: Hopeless Programming
 description: A chronicle of over-engineered masterpieces.
-theme: jekyll-theme-merlot
+theme: jekyll-theme-chirpy
 permalink: /:categories/:year/:month/:title/

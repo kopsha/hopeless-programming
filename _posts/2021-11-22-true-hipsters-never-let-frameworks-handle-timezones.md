@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "True Hipsters Never Let Frameworks Handle Timezones"
 date: 2021-11-22
 categories: hopeless-programming

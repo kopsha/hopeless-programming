@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "When You Learn About zip()"
 date: 2021-12-19
 categories: hopeless-programming

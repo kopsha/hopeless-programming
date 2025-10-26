@@ -1,6 +1,6 @@
 ---
 title: "Automation Anxiety"
-date: 2025-10-30
+date: 2025-10-20
 categories: the-great-abstraction-tragedy
 ---
 

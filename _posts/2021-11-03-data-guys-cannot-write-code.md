@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Data Guys Cannot Write Code"
 date: 2021-11-03
 categories: hopeless-programming

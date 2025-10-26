@@ -24,7 +24,7 @@ because you wrote every script.
 You push to main.  
 Pipelines trigger pipelines.  
 Bots talk to bots.  
-Slack celebrates a deployment no one understands.
+Slack celebrates a deployment nobody understands.
 
 The system works  
 until it doesn't.
@@ -35,7 +35,7 @@ like medieval priests reading omens.
 ---
 
 We used to say _"automate the boring stuff"_.  
-Now the boring stuff runs 24/7,  
+Now the boring stuff runs forever,  
 and we're the ones waiting.
 
 We have observability, alerting, orchestration, and chaos testing  

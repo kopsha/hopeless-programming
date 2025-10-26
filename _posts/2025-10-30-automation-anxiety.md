@@ -6,8 +6,6 @@ categories: the-great-abstraction-tragedy
 
 ![Automation Anxiety](/res/automation-anxiety.png)
 
-## DevOps: We automated everything, except understanding
-
 ---
 
 **2010**:  
@@ -28,7 +26,6 @@ Slack celebrates a deployment nobody understands.
 
 The system works  
 until it doesn't.
-
 Then everyone watches dashboards  
 like medieval priests reading omens.
 
@@ -36,7 +33,8 @@ like medieval priests reading omens.
 
 We used to say _"automate the boring stuff"_.  
 Now the boring stuff runs forever,  
-and we're the ones waiting.
+and we're the ones waiting,
+watching, guessing.
 
 We have observability, alerting, orchestration, and chaos testing  
 but if you ask why something broke,  
@@ -48,10 +46,12 @@ the answer is usually:
 We didn't eliminate toil.  
 We just abstracted it.  
 Wrapped it in YAML.  
-And called it DevOps.
+Called it DevOps,
+and congratulated ourselves on moving faster.
 
-Somewhere, a junior engineer asks,
-> "So… what actually happens after I push?"  
+But somewhere, in every company,  
+a junior engineer asks:
+> "So... what actually happens after I push?"  
 > And the room goes quiet.
 
 #DevOps #Automation #SoftwareEngineering #TechHumor #Observability

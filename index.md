@@ -16,13 +16,13 @@ It's not really that hard:
   and cram in clever one-liners that exploit obscure, hipster features of your
   favorite language.
 
-The sky is the limit!
+_The sky is the limit!_
 
 Sure, it will make the application harder to read and maintain. But that's
-probably your coworkers' problem, right?
+probably your coworkers' problem, right?  
 Excellent.
 
-Go ahead, write code that proves you're a true hacker...
+Go ahead, write some code that proves you're a true hacker...
 
 ---
 

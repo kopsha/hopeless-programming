@@ -4,9 +4,10 @@ date: 2025-10-23
 categories: great-abstraction-tragedy
 ---
 
-# 🚧 The Great Abstraction Tragedy 🚧 #2
-
 ![Cancelled Standup](/res/cancelled-standup.jpg)
+
+
+# 🚧 The Great Abstraction Tragedy 🚧 #2
 
 ## Continuous Conversations
 
@@ -55,10 +56,7 @@ By humans.
 
 ---
 
-```
-#Agile #Scrum #Standup #GreatAbstractionTragedy
-#SoftwareEngineering #ProgrammingHumor #TechCulture #LegacyCode #DevLife
-```
+`#GreatAbstractionTragedy #SoftwareEngineering #ProgrammingHumor #TechCulture #LegacyCode #DevLife`
 
 ---
 

@@ -42,8 +42,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://kopsha.github.io
-      baseurl: /hopeless-programming
+      url: https://kopsha.github.io/hopeless-programming
     runs-on: ubuntu-latest
     needs: build
     steps:

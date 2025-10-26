@@ -63,7 +63,8 @@ a junior engineer asks:
 
 ---
 
-`#GreatAbstractionTragedy #SoftwareEngineering #ProgrammingHumor #TechCulture #LegacyCode #DevLife`
+**#GreatAbstractionTragedy #SoftwareEngineering #ProgrammingHumor #TechCulture
+#LegacyCode #DevLife #DevOps**
 
 ---
 

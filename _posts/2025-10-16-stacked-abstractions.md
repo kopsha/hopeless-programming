@@ -58,7 +58,8 @@ And has dark mode.
 
 ---
 
-`#GreatAbstractionTragedy #SoftwareEngineering #ProgrammingHumor #TechCulture #LegacyCode #DevLife`
+**#GreatAbstractionTragedy #SoftwareEngineering #ProgrammingHumor #TechCulture
+#LegacyCode #DevLife**
 
 ---
 

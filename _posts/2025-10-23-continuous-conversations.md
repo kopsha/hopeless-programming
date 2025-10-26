@@ -1,10 +1,19 @@
 ---
-title: "Endless Standup"
+title: "Continuous Conversations"
 date: 2025-10-23
-categories: the-great-abstraction-tragedy
+categories: great-abstraction-tragedy
 ---
 
-![Endless Standup](/res/endless-standup.png)
+# 🚧 The Great Abstraction Tragedy 🚧 #2
+
+![Cancelled Standup](/res/cancelled-standup.jpg)
+
+## Continuous Conversations
+
+_where velocity means_  
+_talking faster_
+
+---
 
 **2003:**  
 We discovered Agile.  
@@ -46,4 +55,11 @@ By humans.
 
 ---
 
-#Agile #Scrum #SoftwareEngineering #DevHumor #TechCulture #Standup
+```
+#Agile #Scrum #Standup #GreatAbstractionTragedy
+#SoftwareEngineering #ProgrammingHumor #TechCulture #LegacyCode #DevLife
+```
+
+---
+
+![Continuous Conversations](/res/continuous-conversations.png)

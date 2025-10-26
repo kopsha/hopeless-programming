@@ -1,7 +1,7 @@
 ---
 title: "Automation Anxiety"
 date: 2025-10-30
-categories: the-great-abstraction-tragedy
+categories: great-abstraction-tragedy
 ---
 
 ![Automation Anxiety](/res/automation-anxiety.png)

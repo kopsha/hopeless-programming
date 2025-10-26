@@ -1,7 +1,7 @@
 ---
 title: "Stacked Abstractions"
 date: 2025-10-16
-categories: the-great-abstraction-tragedy
+categories: great-abstraction-tragedy
 ---
 
 # 🚧 The Great Abstraction Tragedy 🚧 #1
@@ -33,7 +33,7 @@ that imports a C library written in 1992.
 
 It doesn’t work.  
 You open GitHub.  
-Last commit: "Temporary fix." (from 2018).
+Last commit: "Temporary fix" (from 2018).
 
 Back then, a *stack* meant stack memory.  
 Now it means 17 logos in a slide deck.

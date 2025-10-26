@@ -41,7 +41,7 @@ and we're the ones waiting.
 We have observability, alerting, orchestration, and chaos testing  
 but if you ask why something broke,  
 the answer is usually:
-> _"Because we automated the part that knew why it worked."_
+> "Because we automated the part that knew why it worked."
 
 ---
 
@@ -51,7 +51,7 @@ Wrapped it in YAML.
 And called it DevOps.
 
 Somewhere, a junior engineer asks,
-> _"So… what actually happens after I push?"_
+> "So… what actually happens after I push?"  
 > And the room goes quiet.
 
 #DevOps #Automation #SoftwareEngineering #TechHumor #Observability

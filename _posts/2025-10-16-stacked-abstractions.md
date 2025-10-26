@@ -1,11 +1,20 @@
 ---
-title: "Silent Function"
+title: "Stacked Abstractions"
 date: 2025-10-16
-categories: the-great-abstraction-tragedy
+categories: great-abstraction-tragedy
 ---
 
-![Silent Function](/res/silent-function.png)
+![Turbo C++ IDE](/res/borland-tcpp.png)
 
+
+# 🚧 The Great Abstraction Tragedy 🚧 #1
+
+## Stacked Abstractions
+
+_once we coded_  
+_now we configure_
+
+---
 
 **1992:**  
 You wrote C.  
@@ -25,7 +34,7 @@ that imports a C library written in 1992.
 
 It doesn’t work.  
 You open GitHub.  
-Last commit: "Temporary fix." (from 2018).
+Last commit: "Temporary fix" (from 2018).
 
 Back then, a *stack* meant stack memory.  
 Now it means 17 logos in a slide deck.
@@ -49,4 +58,10 @@ And has dark mode.
 
 ---
 
-#SoftwareEngineering #ProgrammingHumor #TechCulture #LegacyCode #DevLife
+**#GreatAbstractionTragedy #SoftwareEngineering #ProgrammingHumor #TechCulture
+#LegacyCode #DevLife**
+
+---
+
+![Stacked Abstractions](/res/stacked-abstractions.png)
+

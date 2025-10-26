@@ -1,10 +1,17 @@
 ---
 title: "Automation Anxiety"
 date: 2025-10-30
-categories: the-great-abstraction-tragedy
+categories: great-abstraction-tragedy
 ---
 
-![Automation Anxiety](/res/automation-anxiety.png)
+# 🚧 The Great Abstraction Tragedy 🚧 #3
+
+`TODO: add meme here...`
+
+## Automation Anxiety
+
+_when bots deploy_  
+_and we just watch_
 
 ---
 
@@ -54,4 +61,12 @@ a junior engineer asks:
 > "So... what actually happens after I push?"  
 > And the room goes quiet.
 
-#DevOps #Automation #SoftwareEngineering #TechHumor #Observability
+---
+
+**#GreatAbstractionTragedy #SoftwareEngineering #ProgrammingHumor #TechCulture
+#LegacyCode #DevLife #DevOps**
+
+---
+
+![Automation Anxiety](/res/automation-anxiety.png)
+

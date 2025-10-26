@@ -56,7 +56,8 @@ By humans.
 
 ---
 
-`#GreatAbstractionTragedy #SoftwareEngineering #ProgrammingHumor #TechCulture #LegacyCode #DevLife`
+**#GreatAbstractionTragedy #SoftwareEngineering #ProgrammingHumor #TechCulture
+#LegacyCode #DevLife**
 
 ---
 

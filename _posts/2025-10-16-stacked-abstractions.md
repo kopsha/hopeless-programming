@@ -4,7 +4,7 @@ date: 2025-10-16
 categories: the-great-abstraction-tragedy
 ---
 
-# [The Great Abstraction Tragedy #1]
+# 🚧 The Great Abstraction Tragedy 🚧 #1
 
 ![Turbo C++ IDE](/res/borland-tcpp.png)
 
@@ -58,6 +58,7 @@ And has dark mode.
 ---
 
 #SoftwareEngineering #ProgrammingHumor #TechCulture #LegacyCode #DevLife
+#GreatAbstractionTragedy
 
 ---
 

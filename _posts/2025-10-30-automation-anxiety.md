@@ -1,6 +1,6 @@
 ---
 title: "Automation Anxiety"
-date: 2025-10-20
+date: 2025-10-30
 categories: the-great-abstraction-tragedy
 ---
 
@@ -25,7 +25,7 @@ Bots talk to bots.
 Slack celebrates a deployment nobody understands.
 
 The system works  
-until it doesn't.
+until it doesn't.  
 Then everyone watches dashboards  
 like medieval priests reading omens.
 
@@ -33,13 +33,13 @@ like medieval priests reading omens.
 
 We used to say _"automate the boring stuff"_.  
 Now the boring stuff runs forever,  
-and we're the ones waiting,
+and we're the ones waiting,  
 watching, guessing.
 
 We have observability, alerting, orchestration, and chaos testing  
 but if you ask why something broke,  
 the answer is usually:
-> "Because we automated the part that knew why it worked."
+> "Because we automated away the understanding."
 
 ---
 

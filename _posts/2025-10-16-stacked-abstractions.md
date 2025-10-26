@@ -6,6 +6,8 @@ categories: the-great-abstraction-tragedy
 
 # [The Great Abstraction Tragedy #1]
 
+![Turbo C++ IDE](/res/borland-tcpp.png)
+
 ## Stacked Abstractions
 
 _once we coded_  

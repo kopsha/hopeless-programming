@@ -1,7 +1,6 @@
 title: Hopeless Programming
 description: >-
     A chronicle of over-engineered masterpieces.
-baseurl: /hopeless-programming
-permalink: /hopeless-programming/:year/:month/:title/
+permalink: /:categories/:title/
 theme: jekyll-theme-midnight
 

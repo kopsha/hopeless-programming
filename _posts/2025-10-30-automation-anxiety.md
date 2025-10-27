@@ -4,7 +4,7 @@ date: 2025-10-30
 categories: great-abstraction-tragedy
 ---
 
-![Deploy the Fix](/res/deploy-the-fix.jpg)
+![CICD fix log](/res/cicd-fix-log.jpg)
 
 
 # 🚧 [The Great Abstraction Tragedy #3]

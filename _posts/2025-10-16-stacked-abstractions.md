@@ -7,7 +7,7 @@ categories: great-abstraction-tragedy
 ![Turbo C++ IDE](/res/borland-tcpp.png)
 
 
-# 🚧 The Great Abstraction Tragedy 🚧 #1
+# 🚧 [The Great Abstraction Tragedy #1]
 
 ## Stacked Abstractions
 
@@ -16,7 +16,7 @@ _now we configure_
 
 ---
 
-**1992:**  
+**1992**:  
 You wrote C.  
 You compiled.  
 It ran.  
@@ -25,7 +25,7 @@ You felt unstoppable.
 Your tools?  
 A terminal, a manual, and a terrifying sense of responsibility.
 
-**2025:**  
+**2025**:  
 You write YAML that describes JSON  
 that configures Docker  
 that runs Node  

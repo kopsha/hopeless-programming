@@ -7,7 +7,7 @@ categories: great-abstraction-tragedy
 ![Cancelled Standup](/res/cancelled-standup.jpg)
 
 
-# 🚧 The Great Abstraction Tragedy 🚧 #2
+# 🚧 [The Great Abstraction Tragedy #2]
 
 ## Continuous Conversations
 
@@ -16,7 +16,7 @@ _talking faster_
 
 ---
 
-**2003:**  
+**2003**:  
 We discovered Agile.  
 It was fresh. It was rebellious.  
 *"Individuals and interactions over processes and tools."*  
@@ -26,7 +26,7 @@ Meetings were short.
 Code was long.  
 And "velocity" meant momentum, not metrics.
 
-**2025:**  
+**2025**:  
 We stand up.  
 We circle around the same virtual board.  
 We say the same three things in slightly different words.  

@@ -4,9 +4,10 @@ date: 2025-10-30
 categories: great-abstraction-tragedy
 ---
 
-# 🚧 The Great Abstraction Tragedy 🚧 #3
+![Deploy the Fix](/res/deploy-the-fix.jpg)
 
-`TODO: add meme here...`
+
+# 🚧 [The Great Abstraction Tragedy #3]
 
 ## Automation Anxiety
 
@@ -38,7 +39,7 @@ like medieval priests reading omens.
 
 ---
 
-We used to say _"automate the boring stuff"_.  
+We used to say "_automate the boring stuff_".  
 Now the boring stuff runs forever,  
 and we're the ones waiting,  
 watching, guessing.
